@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'web_collections/index'
-  get 'web_collections/about'
-  get 'web_collections/show'
-  get 'web_collections/new'
-  get 'web_collections/edit'
-  root 'web_collections#index'
+  root  'web_collections#index'
+  get   '/about'  to: 'web_collections#about'
+  get   '/show'   to: 'web_collections#show'
+  get   '/new'    to: 'web_collections#new'
+  get   '/edit'   to: 'web_collections#edit'
 end
