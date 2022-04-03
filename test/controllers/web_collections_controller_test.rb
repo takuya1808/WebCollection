@@ -2,27 +2,27 @@ require "test_helper"
 
 class WebCollectionsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get web_collections_index_url
+    get root_path
     assert_response :success
   end
 
   test "should get about" do
-    get web_collections_about_url
+    get about_path
     assert_response :success
   end
 
   test "should get show" do
-    get web_collections_show_url
+    get show_path
     assert_response :success
   end
 
   test "should get new" do
-    get web_collections_new_url
+    get new_path
     assert_response :success
   end
 
   test "should get edit" do
-    get web_collections_edit_url
+    get edit_path
     assert_response :success
   end
 end
