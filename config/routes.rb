@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :web_collections
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get 'web_collections/index'
+  get 'web_collections/about'
+  get 'web_collections/show'
+  get 'web_collections/new'
+  get 'web_collections/edit'
+  root 'web_collections#index'
 end
