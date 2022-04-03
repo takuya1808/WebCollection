@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @web_collection %>
+
+<div>
+  <%= link_to "Edit this web collection", edit_web_collection_path(@web_collection) %> |
+  <%= link_to "Back to web collections", web_collections_path %>
+
+  <%= button_to "Destroy this web collection", @web_collection, method: :delete %>
+</div>

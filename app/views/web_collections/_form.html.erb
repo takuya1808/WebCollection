@@ -1,0 +1,17 @@
+<%= form_with(model: web_collection) do |form| %>
+  <% if web_collection.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(web_collection.errors.count, "error") %> prohibited this web_collection from being saved:</h2>
+
+      <ul>
+        <% web_collection.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
