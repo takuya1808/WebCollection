@@ -15,4 +15,9 @@ class CollectionTest < ActiveSupport::TestCase
     assert_not @collection.valid?
   end
 
+  test "url should be present" do
+    @collection.url = "     "
+    assert_not @collection.valid?
+  end
+
 end
