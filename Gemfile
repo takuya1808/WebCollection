@@ -47,7 +47,7 @@ gem "sassc-rails"
 
 gem 'jquery-rails'
 
-gem 'kaminari'          #ページネーション
+gem 'kaminari'          # ページネーション
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -65,7 +65,7 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-   gem "spring" #コマンド時間短縮
+   gem "spring" # コマンド時間短縮
 end
 
 group :test do
@@ -75,4 +75,5 @@ group :test do
   gem "webdrivers"
   gem 'minitest'
   gem 'minitest-reporters'        # テスト結果を見やすく表示
+  gem 'rails-controller-testing'  # testに必要なgem
 end
