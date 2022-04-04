@@ -25,4 +25,10 @@ class CollectionTest < ActiveSupport::TestCase
     assert_not @collection.valid?
   end
 
+  test "url should be unique" do
+    duplicate_url = @collection.dup
+    @collection.save
+    assert_not duplicate_url.valid?
+  end
+
 end
