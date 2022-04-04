@@ -20,4 +20,9 @@ class CollectionTest < ActiveSupport::TestCase
     assert_not @collection.valid?
   end
 
+  test "url should not be too long" do
+    @collection.url = "https://" + ("a" * 240) + ".example.com"
+    assert_not @collection.valid?
+  end
+
 end
