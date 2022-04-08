@@ -32,4 +32,11 @@ class CollectionTest < ActiveSupport::TestCase
     assert_not duplicate_url.valid?
   end
 
+  test "url should be saved as lower-case" do
+    mixed_case_url = "https://FooExAMPle.CoM"
+    @collection.url = mixed_case_url
+    @collection.save
+    assert_equal mixed_case_url.downcase, @collection.reload.url
+  end
+
 end
