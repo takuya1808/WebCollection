@@ -1,3 +1,7 @@
 <% provide(:title, "New") %>
 <h1>WebCollections#new</h1>
-<p>Find me in app/views/web_collections/new.html.erb</p>
+<%= form_with(url: new_path, local: true) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.url_field :url %>
+  <%= f.submit %>
+<% end %>
