@@ -10,6 +10,7 @@ class WebCollectionsController < ApplicationController
   end
 
   def new
+    @collection = Collection.new
   end
 
   def edit
