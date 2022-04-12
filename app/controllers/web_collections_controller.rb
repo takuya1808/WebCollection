@@ -10,10 +10,16 @@ class WebCollectionsController < ApplicationController
   end
 
   def new
-    @collection = Collection.new(collection_params)
+    @collection = Collection.new
   end
 
   def create
+    @collection = Collection.new(collection_params)
+    if @collection.save
+      redirect_to root_url
+    else
+      render 'new'
+    end
   end
 
   def edit
