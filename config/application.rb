@@ -11,8 +11,14 @@ module WebCollection
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    #renderしたformにclass field_error を表示させないようにする
+    # renderしたformにclass field_error を表示させないようにする
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+
+    # デフォルトのロケールを:en以外に変更する
+    config.i18n.default_locale = :ja
+
+    # I18nライブラリに訳文の探索場所を指示する
+    config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.yml').to_s]
     
     # Configuration for the application, engines, and railties goes here.
     #

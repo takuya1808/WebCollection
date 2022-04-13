@@ -1,6 +1,6 @@
 <% if @collection.errors.any? %>
     
-      The form contains <%= pluralize(@collection.errors.count, "error") %>.
+    <p><%= @collection.errors.count %>つのエラーがあります</p>
     
     <ul>
     <% @collection.errors.full_messages.each do |msg| %>
