@@ -19,6 +19,10 @@ module WebCollection
 
     # I18nライブラリに訳文の探索場所を指示する
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.yml').to_s]
+
+    # 日本時間に変更
+    config.time_zone = 'Tokyo'                      #　アプリケーション側
+    config.active_record.default_timezone = :local  #　DB側
     
     # Configuration for the application, engines, and railties goes here.
     #
