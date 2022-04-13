@@ -28,6 +28,6 @@ class WebCollectionsController < ApplicationController
   private
     
     def collection_params
-      params.permit(:title, :url)
+      params.require(:collection).permit(:title, :url)
     end
 end
