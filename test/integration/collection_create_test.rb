@@ -11,4 +11,14 @@ class CollectionCreateTest < ActionDispatch::IntegrationTest
     assert_template 'new'
     assert_select 'div.alert'
   end
+
+  test "Successful collection posting" do
+    get new_path
+    assert_difference "Collection.count", 1 do
+      post new_path, params: {collection: { title: "test",
+                                            url: "http://www.example.com/"}}
+    end
+    follow_redirect!
+    assert_template 'web_collections/index'
+  end
 end
