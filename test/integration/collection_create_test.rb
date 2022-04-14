@@ -20,5 +20,6 @@ class CollectionCreateTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!
     assert_template 'web_collections/index'
+    assert_not flash.nil?
   end
 end
