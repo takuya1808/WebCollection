@@ -28,7 +28,13 @@ class WebCollectionsController < ApplicationController
   end
 
   def update
-    
+    @collection = Collection.find(params[:id])
+    if @collection.update(collection_params)
+      flash[:success] = "collection を変更"
+      redirect_to root_url
+    else
+      render 'edit'
+    end
   end
 
   private
