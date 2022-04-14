@@ -1,5 +1,6 @@
 class WebCollectionsController < ApplicationController
   def index
+    @collections = Collection.all
   end
 
   def about
