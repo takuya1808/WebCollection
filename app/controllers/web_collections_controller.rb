@@ -16,6 +16,7 @@ class WebCollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     if @collection.save
+      flash[:success] = "collection を追加"
       redirect_to root_url
     else
       render 'new'
