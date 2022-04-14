@@ -24,6 +24,11 @@ class WebCollectionsController < ApplicationController
   end
 
   def edit
+    @collection = Collection.find(params[:id])
+  end
+
+  def update
+    
   end
 
   private
