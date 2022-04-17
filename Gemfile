@@ -49,6 +49,8 @@ gem 'jquery-rails'
 
 gem 'kaminari'          # ページネーション
 gem 'rails-i18n'        # 日本語化（言語変更）
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
