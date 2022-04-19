@@ -3,7 +3,9 @@ require "test_helper"
 class CollectionTest < ActiveSupport::TestCase
 
   def setup
-    @collection = Collection.new(title: "Example title", url: "https://www.google.com/?hl=ja")
+    @collection = Collection.new( title: "Example title",
+                                  url: "https://www.google.com/?hl=ja", 
+                                  image: File.open("./test/fixtures/testsite.png"))
   end
 
   test "should be valid" do
