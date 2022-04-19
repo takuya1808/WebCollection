@@ -1,17 +1,11 @@
 <h1>WebCollections#index</h1>
 <div class="container">
   <div class="row text-center">
-    <div class="col-6 col-sm-4">
-      <%= link_to image_tag("asurasd.png", alt: "asurasd", width: "100%"), '#' %>
-      <p>アシュラSD</p>
-    </div>
-    <div class="col-6 col-sm-4">
-      <%= link_to image_tag("thliveon.com.png", alt: "thliveon", width: "100%"), '#' %>
-      <p>thLiveOn</p>
-    </div>
-    <div class="col-6 col-sm-4">
-      <%= link_to image_tag("vitamin-c.png", alt: "vitamin-c", width: "100%"), '#' %>
-      <p>Vitamin-C</p>
-    </div>
+    <% @collections.each do |collection| %>
+      <div class="col-6 col-sm-4">
+        <%= link_to image_tag(collection.image, width: "100%"), collection.url if collection.image? %>
+        <%= link_to collection.title, web_collection_path(collection) %>
+      </div>
+    <% end %>
   </div>
 </div>
