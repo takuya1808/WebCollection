@@ -17,7 +17,8 @@
 
     <%= f.label :image, class: 'form-label' %>
     <div class="form-outline mb-4">
-      <%= f.file_field :image, id: 'customFile', class: 'form-control' %>
+      <%= f.file_field :image, accept: 'image/jpg,image/jpeg,image/gif,image/png',
+                               id: 'customFile', class: 'form-control' %>
     </div>
       
       <%= f.submit 'Save', class: 'btn btn-primary btn-block mb-4' %>
