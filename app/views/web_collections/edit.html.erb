@@ -14,6 +14,11 @@
       <%= f.url_field :url, class: 'form-control' %>
       <%= f.label :url, class: 'form-label' %>
     </div>
+
+    <%= f.label :image, class: 'form-label' %>
+    <div class="form-outline mb-4">
+      <%= f.file_field :image, id: 'customFile', class: 'form-control' %>
+    </div>
       
       <%= f.submit 'Save', class: 'btn btn-primary btn-block mb-4' %>
   <% end %>
