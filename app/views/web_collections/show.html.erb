@@ -2,4 +2,4 @@
 <h1>WebCollections#show</h1>
 <%= @collection.title %>,
 <%= @collection.url %>
-<%= link_to image_tag(@collection.image, width: "50%"), @collection.url if @collection.image? %>
+<%= link_to image_tag(@collection.image.url, width: "50%"), @collection.url if @collection.image? %>
