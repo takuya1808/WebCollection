@@ -8,8 +8,9 @@ class CollectionEditTest < ActionDispatch::IntegrationTest
   test "unsuccessful edit" do
     get edit_web_collection_path(@collection)
     assert_template 'web_collections/edit'
-    patch web_collection_path(@collection), params: { collection: {  title: "",
-                                                                      url: "htpps://www.exmple.com/"}}
+    patch web_collection_path(@collection), params: { collection: { title: "",
+                                                                    url: "htpps://www.exmple.com/",
+                                                                    image: "" }}
     assert_template 'web_collections/edit'
   end
 
@@ -17,8 +18,10 @@ class CollectionEditTest < ActionDispatch::IntegrationTest
     get edit_web_collection_path(@collection)
     assert_template 'web_collections/edit'
     title = "testsite1"
-    patch web_collection_path(@collection), params: { collection: {  title: title,
-                                                                      url: "htpps://www.exmple.com/"}}
+    image = fixture_file_upload('test/fixtures/testsite.png', 'image/png')
+    patch web_collection_path(@collection), params: { collection: { title: title,
+                                                                    url: "htpps://www.exmple.com/",
+                                                                    image: image }}
     follow_redirect!
     assert_not flash.empty?
     assert_template 'web_collections/index'
