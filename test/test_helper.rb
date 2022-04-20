@@ -10,6 +10,13 @@ class ActiveSupport::TestCase
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
-  include ApplicationHelper # test環境でもApplicationヘルパーを使えるようにする
-  # Add more helper methods to be used by all tests here...
+
+  # test環境でもApplicationヘルパーを使えるようにする
+  include ApplicationHelper
+
+  # testで作成されたファイルを削除
+  def after_teardown
+    super
+    CarrierWave.clean_cached_files!(0)
+  end
 end
