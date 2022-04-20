@@ -41,4 +41,9 @@ class CollectionTest < ActiveSupport::TestCase
     assert_equal mixed_case_url.downcase, @collection.reload.url
   end
 
+  test "image should be present" do
+    @collection.image = ""
+    assert_not @collection.valid?
+  end
+
 end
