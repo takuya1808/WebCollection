@@ -21,4 +21,5 @@ Collection.create!(
 User.create!( name: "EXAMPLE USER",
               email: "example@google.com",
               password: "password",
-              encrypted_password: "password")
+              encrypted_password: "password",
+              admin: true)
