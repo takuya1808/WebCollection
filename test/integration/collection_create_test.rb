@@ -1,6 +1,11 @@
 require "test_helper"
 
 class CollectionCreateTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
+  def setup
+    sign_in users(:adminuser)
+  end
   
   test "invalid collection create information" do
     get new_path

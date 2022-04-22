@@ -4,6 +4,5 @@
 <%= @collection.url %>
 <%= link_to image_tag(@collection.image.url, width: "50%"), @collection.url if @collection.image? %>
 <% if current_user&.admin? %>
-  <%= button_to "", web_collection_path(@collection), method: :delete, 
-                                                  data: { turbo_confirm: '本当に削除しますか?'}, class: "fas fa-trash" %>
+  <%= button_to "", web_collection_path(@collection), method: :delete, class: "fas fa-trash" %>
 <% end %>

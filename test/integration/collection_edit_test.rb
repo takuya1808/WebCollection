@@ -1,8 +1,12 @@
 require "test_helper"
 
 class CollectionEditTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+  
   def setup
     @collection = collections(:testsite)
+    @user = users(:adminuser)
+    sign_in @user
   end
 
   test "unsuccessful edit" do

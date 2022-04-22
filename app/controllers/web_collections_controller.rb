@@ -1,4 +1,5 @@
 class WebCollectionsController < ApplicationController
+  before_action :user_signed_in?, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -53,6 +54,8 @@ class WebCollectionsController < ApplicationController
     end
 
     def admin_user
-      redirect_to(root_url) unless current_user.admin?
+      if !current_user&.admin?
+        redirect_to root_url
+      end
     end
 end
