@@ -1,4 +1,6 @@
 class WebCollectionsController < ApplicationController
+  before_action :admin_user, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @collections = Collection.all
   end
@@ -38,9 +40,19 @@ class WebCollectionsController < ApplicationController
     end
   end
 
+  def destroy
+    Collection.find(params[:id]).destroy
+    flash[:success] = "Collection deleted"
+    redirect_to root_url
+  end
+
   private
     
     def collection_params
       params.require(:collection).permit(:title, :url, :image)
+    end
+
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
     end
 end
